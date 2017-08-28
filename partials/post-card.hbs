@@ -1,0 +1,29 @@
+
+
+<article class="post-card {{post_class}}{{#unless feature_image}} no-image{{/unless}}">
+    <div align="center">
+        {{#if feature_image}}
+            <a href="{{url}}">
+                <img class="blog-main-photo" src="{{feature_image}}">
+            </a>
+        {{/if}}
+        <time class="blog-subtitle" datetime="{{date published_at format="YYYY-MM-DD"}}">{{date}}</time>
+        / <span class="blog-subtitle">{{author}}</span>
+        <h2 class="blog-title"><a href="{{url}}" title="{{title}}">{{title}}</a></h2>
+    </div>
+    
+    <p class="post-description">{{excerpt words="33"}}<a href="{{url}}" class="read_link">[...]</a></p>
+    
+    {{#if tags}}
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            {{#get "tags" limit="all"}}
+                {{#foreach tags}}
+                    <a href="{{url}}">{{name}}</a>
+                {{/foreach}}
+            {{/get}}    
+        </div>
+        
+    {{/if}}
+</article>
+

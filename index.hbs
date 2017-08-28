@@ -1,0 +1,37 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+{{> "navigation"}}
+
+  <article class="content">
+    <div class="blog-info-wrapper">
+        <div class="blog-img">
+           <img src="{{asset "img/smokeybyte-lg.svg"}}" />
+        </div>
+        <div class="blog-main-title">
+            <h1>
+              <span id="bold">Smokey</span><span id="not-bold">Byte</span>
+            </h1>
+        </div>
+        <div class="blog-description">
+            
+            {{#is "home"}}
+              { Tech - Culture - Tutz }
+            {{else}}
+              { {{tag.name}} }
+            {{/is}}
+
+        </div>
+    </div>
+    <div class="post-feed">
+      {{#foreach posts}}    
+          {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+        {{> "post-card"}}
+
+      {{/foreach}}
+    </div>
+
+    {{pagination}}
+
+  </article>
+{{> "footer"}}

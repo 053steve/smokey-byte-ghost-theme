@@ -1,0 +1,28 @@
+.footer {
+  grid-column: 1 / -1;
+  /* needed for the floated layout */
+  clear: both;
+  text-align: center;  
+  padding: 10px 0px;
+
+  .footer-text {
+    font-size: .8em;
+    font-family: $roboto;
+    font-weight: 400;
+    color: #7c7f86;
+
+    i {
+      color: #f54848;
+    }
+
+    a {      
+      text-decoration: none;
+      color: #2c3644;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+

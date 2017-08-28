@@ -1,0 +1,272 @@
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+body {
+  margin: 0px;
+  font-family: Open Sans, sans-serif;
+  background-color: #fff;
+  color: #444; }
+
+h1, p {
+  margin: 0 0 1em 0; }
+
+p {
+  font-family: Open Sans, sans-serif;
+  line-height: 1.8;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: #2c3643; }
+
+a {
+  color: #a9a8a8;
+  font-weight: 500;
+  text-decoration: none; }
+  a:hover {
+    text-decoration: underline; }
+
+/* make a grid */
+.site-wrapper {
+  max-width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 947px 1fr;
+  /* We need to set the widths used on floated items back to auto, and remove the bottom margin as when we have grid we have gaps. */ }
+  @media only screen and (max-width: 480px) {
+    .site-wrapper {
+      grid-template-columns: 1fr 2fr 1fr; } }
+  @media only screen and (min-width: 481px) and (max-width: 1199px) {
+    .site-wrapper {
+      grid-template-columns: 0.5fr 3fr 0.5fr;
+      grid-row-gap: 10px; } }
+  .site-wrapper .content {
+    font-family: Open Sans, sans-serif;
+    text-align: center;
+    max-width: 947px;
+    padding-top: 18px;
+    grid-column: 2 / 3; }
+    @media only screen and (max-width: 480px) {
+      .site-wrapper .content {
+        grid-column: 1 / -1; } }
+    .site-wrapper .content .blog-main-title {
+      font-size: 3.998em;
+      color: #2c3644;
+      margin-bottom: 35px; }
+      @media only screen and (max-width: 480px) {
+        .site-wrapper .content .blog-main-title {
+          font-size: 1.998em; } }
+      .site-wrapper .content .blog-main-title span#bold {
+        font-weight: 700; }
+      .site-wrapper .content .blog-main-title span#not-bold {
+        font-weight: 300; }
+    .site-wrapper .content .blog-description {
+      font-size: 1.9em;
+      margin-bottom: 43px;
+      margin-top: 16px; }
+    .site-wrapper .content .blog-img img {
+      width: 208px;
+      margin-bottom: 20px; }
+    .site-wrapper .content .post-feed {
+      padding: 0px 124px; }
+      @media only screen and (min-width: 481px) and (max-width: 1199px) {
+        .site-wrapper .content .post-feed {
+          padding: 0px; } }
+      @media only screen and (max-width: 480px) {
+        .site-wrapper .content .post-feed {
+          padding: 0px; } }
+    .site-wrapper .content .pagination {
+      text-align: center;
+      grid-column: 1 / -1;
+      margin-bottom: 40px; }
+  @supports (display: grid) {
+    .site-wrapper * {
+      width: auto;
+      margin: 0; } }
+
+.post-card, .post-page, .post-author {
+  margin-bottom: 63px;
+  border-bottom: 1px solid #7c7f86;
+  text-align: center; }
+  @media only screen and (max-width: 480px) {
+    .post-card, .post-page, .post-author {
+      margin-bottom: 0px; }
+      .post-card:last-of-type, .post-page:last-of-type, .post-author:last-of-type {
+        border-bottom: 0px; } }
+  .post-card .blog-main-photo, .post-page .blog-main-photo, .post-author .blog-main-photo {
+    width: 100%;
+    margin-bottom: 15px; }
+  .post-card .blog-subtitle, .post-page .blog-subtitle, .post-author .blog-subtitle {
+    font-size: .8em;
+    font-family: "Roboto Mono", monospace;
+    font-weight: 400;
+    color: #b9b9b9;
+    margin: 1em 0 4em 0; }
+    .post-card .blog-subtitle a, .post-page .blog-subtitle a, .post-author .blog-subtitle a {
+      text-decoration: none;
+      color: #2c3644; }
+      .post-card .blog-subtitle a:hover, .post-page .blog-subtitle a:hover, .post-author .blog-subtitle a:hover {
+        text-decoration: underline; }
+  .post-card .blog-title, .post-page .blog-title, .post-author .blog-title {
+    text-align: center;
+    margin-bottom: 24px; }
+    .post-card .blog-title a, .post-page .blog-title a, .post-author .blog-title a {
+      font-family: Open Sans, sans-serif;
+      font-size: 2.1em;
+      text-decoration: none;
+      font-weight: 400;
+      color: #2c3643; }
+      .post-card .blog-title a:hover, .post-page .blog-title a:hover, .post-author .blog-title a:hover {
+        text-decoration: underline; }
+      @media only screen and (max-width: 480px) {
+        .post-card .blog-title a, .post-page .blog-title a, .post-author .blog-title a {
+          font-size: 1.9em; } }
+  .post-card .post-description, .post-page .post-description, .post-author .post-description {
+    font-family: Open Sans, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    letter-spacing: 0;
+    color: #2c3643;
+    text-align: left;
+    padding: 0px 37px;
+    margin-bottom: 69px; }
+    .post-card .post-description a.read_link, .post-page .post-description a.read_link, .post-author .post-description a.read_link {
+      margin-left: 6px;
+      color: #2c3643; }
+  .post-card .post-tags, .post-page .post-tags, .post-author .post-tags {
+    text-align: left;
+    margin-bottom: 12px; }
+    .post-card .post-tags i, .post-page .post-tags i, .post-author .post-tags i {
+      color: #b9b9b9; }
+    .post-card .post-tags a, .post-page .post-tags a, .post-author .post-tags a {
+      padding: 2px 6px;
+      background-color: #b9b9b9;
+      font-family: "Roboto Mono", monospace;
+      font-size: 12px;
+      color: white;
+      border-radius: 5px; }
+      .post-card .post-tags a:hover, .post-page .post-tags a:hover, .post-author .post-tags a:hover {
+        background-color: #908f8f;
+        text-decoration: none; }
+
+.post-page {
+  margin-bottom: 5px; }
+  .post-page .post-title {
+    margin-bottom: 40px; }
+  .post-page .post-content {
+    text-align: left;
+    margin-bottom: 69px; }
+    @media only screen and (max-width: 480px) {
+      .post-page .post-content {
+        padding: 0px 36px; } }
+    .post-page .post-content img {
+      max-width: 100%; }
+  .post-page .blog-title {
+    text-align: center;
+    margin-bottom: 24px;
+    font-family: Open Sans, sans-serif;
+    font-size: 3em;
+    text-decoration: none;
+    font-weight: 400;
+    color: #2c3643; }
+    @media only screen and (max-width: 480px) {
+      .post-page .blog-title {
+        font-size: 1.9em; } }
+
+.post-author {
+  max-width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 3fr; }
+  .post-author .left {
+    grid-column: 1 / 2; }
+    .post-author .left .avatar {
+      display: block;
+      white-space: nowrap;
+      overflow: visible;
+      text-overflow: ellipsis;
+      line-height: normal;
+      position: relative; }
+      .post-author .left .avatar .avatar-image {
+        display: inline-block;
+        vertical-align: middle;
+        border-radius: 100%;
+        max-width: 100%; }
+      .post-author .left .avatar .avatar-image-small {
+        width: 120px;
+        height: 120px; }
+  .post-author .right {
+    grid-column: 2/3; }
+    .post-author .right .author-details {
+      text-align: right; }
+
+.navbar {
+  grid-column: 1 / -1;
+  /* needed for the floated layout */
+  clear: both;
+  background-color: #fff;
+  color: #2c3644;
+  box-shadow: 0 1px 7px rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid #e5e5e5; }
+  .navbar #left-nav {
+    float: left;
+    width: 50%; }
+    @media only screen and (max-width: 480px) {
+      .navbar #left-nav {
+        width: 100%; } }
+    .navbar #left-nav #site-logo img {
+      height: 4.5em;
+      width: auto;
+      padding: 10px 30px 2px 30px;
+      float: left;
+      margin-bottom: 11px; }
+    .navbar #left-nav #site-name {
+      font-family: Open Sans, sans-serif;
+      padding-top: 27px; }
+      .navbar #left-nav #site-name a {
+        text-decoration: none;
+        font-size: 27px;
+        color: #2c3644; }
+        .navbar #left-nav #site-name a:hover {
+          text-decoration: underline; }
+        .navbar #left-nav #site-name a span#bold {
+          font-weight: 700; }
+        .navbar #left-nav #site-name a span#not-bold {
+          font-weight: 300; }
+  .navbar #right-nav {
+    float: right;
+    width: 50%;
+    text-align: right; }
+    @media only screen and (max-width: 480px) {
+      .navbar #right-nav {
+        display: none; } }
+    .navbar #right-nav a {
+      color: #444;
+      margin-right: 1.1em; }
+      .navbar #right-nav a:hover {
+        color: #a9a8a8;
+        text-decoration: none; }
+      .navbar #right-nav a i {
+        font-size: 27px;
+        margin-top: 28px; }
+
+.footer {
+  grid-column: 1 / -1;
+  /* needed for the floated layout */
+  clear: both;
+  text-align: center;
+  padding: 10px 0px; }
+  .footer .footer-text {
+    font-size: .8em;
+    font-family: "Roboto Mono", monospace;
+    font-weight: 400;
+    color: #7c7f86; }
+    .footer .footer-text i {
+      color: #f54848; }
+    .footer .footer-text a {
+      text-decoration: none;
+      color: #2c3644; }
+      .footer .footer-text a:hover {
+        text-decoration: underline; }
+
+/*# sourceMappingURL=input.css.map */

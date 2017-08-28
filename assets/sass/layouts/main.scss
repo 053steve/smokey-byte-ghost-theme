@@ -1,0 +1,121 @@
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;  
+  font-family: $sans;
+  background-color: #fff;
+  color: #444;
+}
+
+h1, p {
+  margin: 0 0 1em 0;
+}
+
+p {
+
+  font-family: $sans;
+  line-height: 1.8;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: #2c3643;
+}
+
+a {
+    color: #a9a8a8;
+    font-weight: 500;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+}
+
+/* make a grid */
+.site-wrapper {
+  max-width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 947px 1fr;      
+
+  @include respond-to(handhelds) {
+    grid-template-columns: 1fr 2fr 1fr;    
+  }  
+
+  @include respond-to(medium-screens) {
+    // grid-template-columns: 1fr 3fr 1fr;    
+    grid-template-columns: 0.5fr 3fr 0.5fr;
+    grid-row-gap: 10px;
+  }
+    
+  .content {    
+    font-family: $sans;
+    text-align: center;
+    max-width: 947px;    
+    padding-top: 18px;
+    grid-column: 2 / 3;    
+    @include respond-to(handhelds) {
+      grid-column: 1 / -1;    
+    }  
+
+    .blog-main-title {        
+        font-size: 3.998em;
+        color: #2c3644;
+        margin-bottom: 35px;
+
+        @include respond-to(handhelds) {
+          font-size: 1.998em;
+        }
+
+        span#bold {
+          font-weight: 700;  
+        }
+
+        span#not-bold {
+          font-weight: 300;
+        }
+    }
+
+    .blog-description {
+      font-size: 1.9em;
+      margin-bottom: 43px;
+      margin-top: 16px;          
+    }
+
+    .blog-img {
+      img {
+        width: 208px;
+        margin-bottom: 20px;
+      }
+    }
+    
+    .post-feed {
+      padding: 0px 124px;
+
+      @include respond-to(medium-screens)  {
+        padding: 0px;
+      }
+
+      @include respond-to(handhelds) {
+        padding: 0px;
+      }
+    }
+
+    .pagination {
+      text-align: center;
+      grid-column: 1 / -1;
+      margin-bottom: 40px;
+    }    
+  }
+
+
+  /* We need to set the widths used on floated items back to auto, and remove the bottom margin as when we have grid we have gaps. */
+  @supports (display: grid) {
+    * {
+      width: auto;
+      margin: 0;
+    }
+  }
+}

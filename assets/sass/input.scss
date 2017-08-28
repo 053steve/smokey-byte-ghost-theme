@@ -1,0 +1,19 @@
+
+// Base
+// --------------------------------------------------
+@import 'variables';
+@import 'mixins';
+
+//
+// Layouts
+// --------------------------------------------------
+
+@import 'layouts/main';
+@import 'layouts/posts';
+
+//
+// Components
+// --------------------------------------------------
+
+@import 'components/navbar';
+@import 'components/footer'; //navbar must always load before footer

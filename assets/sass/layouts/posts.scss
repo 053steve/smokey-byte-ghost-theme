@@ -1,0 +1,203 @@
+//
+// Posts: CSS changes for the post pages
+// --------------------------------------------------
+
+.post-card {
+    margin-bottom: 63px;
+    border-bottom: 1px solid #7c7f86;    
+    text-align: center;
+    @include respond-to(handhelds) {
+      margin-bottom: 0px;
+
+      &:last-of-type {
+          border-bottom: 0px;
+      }
+    }
+
+    .blog-main-photo {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    .blog-subtitle {
+        font-size: .8em;
+        font-family: $roboto;
+        font-weight: 400;
+        color: #b9b9b9;
+        margin: 1em 0 4em 0;
+
+
+        a {
+          text-decoration: none;
+          color: #2c3644;          
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+    }
+
+    .blog-title {
+      text-align: center;
+      margin-bottom: 24px;
+
+      a {
+          font-family: $sans;
+          font-size: 2.1em;
+          text-decoration: none;
+          font-weight: 400;
+          color: #2c3643;
+          &:hover {
+            text-decoration: underline;
+          }
+
+          @include respond-to(handhelds) {
+            font-size: 1.9em;
+          }
+      }
+    }
+
+    .post-description {
+      font-family: $sans;
+      line-height: 1.5;
+      font-weight: 400;
+      letter-spacing: 0;
+      color: #2c3643;
+      text-align: left;
+      padding: 0px 37px;
+      margin-bottom: 69px;
+
+      a.read_link {
+        margin-left: 6px;
+        color: #2c3643;
+      }
+
+    }
+
+    .post-tags {
+      text-align: left;
+      margin-bottom: 12px;
+
+
+      i {
+        color: #b9b9b9;
+      }
+
+      a {
+          padding: 2px 6px;
+          background-color: #b9b9b9;
+          font-family: $roboto;
+          font-size: 12px;
+          color: white;
+          border-radius: 5px;
+
+          &:hover {
+            background-color: #908f8f;
+            text-decoration: none;
+          }
+      }
+    }    
+}
+
+.post-page {
+  @extend .post-card;  
+  margin-bottom: 5px;
+
+  .post-title {
+    margin-bottom: 40px;
+  }
+
+  .post-content {
+    text-align: left;
+    margin-bottom: 69px;    
+    @include respond-to(handhelds) {
+      padding: 0px 36px;
+    }
+
+    img {
+      max-width: 100%;
+    }    
+  }
+
+  .blog-title {
+      text-align: center;
+      margin-bottom: 24px;
+      font-family: $sans;
+      font-size: 3em;
+      text-decoration: none;
+      font-weight: 400;
+      color: #2c3643;
+      @include respond-to(handhelds) {
+        font-size: 1.9em;
+      }      
+  }
+
+}
+
+.post-author {
+  @extend .post-card;
+  max-width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 3fr;
+  padding: 8px 0px;
+
+  .post-tags {
+    text-align: left;
+    margin-bottom: 12px;
+    padding: 0px 18px;
+  }
+
+  .left {
+    grid-column: 1 / 2;
+
+    .avatar {
+      display: block;
+      white-space: nowrap;
+      overflow: visible;
+      text-overflow: ellipsis;
+      line-height: normal;
+      position: relative;
+
+      .avatar-image {
+        display: inline-block;
+        vertical-align: middle;
+        border-radius: 100%;
+        max-width: 100%;
+      }
+
+      .avatar-image-small {
+        width: 120px;
+        height: 120px;
+      }
+    }
+
+  }
+
+
+  .right {
+    grid-column: 2/3;
+
+    .author-details {
+      text-align: left;
+
+      .author-name {
+        margin-top: 12px;
+      }
+
+      .author-bio {
+        margin-top: 5px;
+        font-size: 13px;
+
+        p {
+          color: rgba(0,0,0,.6);
+        }
+
+      }
+
+    }
+
+
+  }
+}

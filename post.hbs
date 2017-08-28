@@ -1,0 +1,66 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+{{> "navigation"}}
+  {{#post}}
+
+    <article class="content">
+      <div class="post-page {{post_class}}{{#unless feature_image}} no-image{{/unless}}">
+          {{#if feature_image}}
+              <a href="{{url}}">
+                  <img class="blog-main-photo" src="{{feature_image}}">
+              </a>
+          {{/if}}
+          <time class="blog-subtitle" datetime="{{date published_at format="YYYY-MM-DD"}}">{{date}}</time>
+          / <span class="blog-subtitle">{{author}}</span>
+          <h2 class="blog-title">{{title}}</h2>
+
+          <section class="post-content">
+            {{content}}
+          </section> 
+
+          {{#if tags}}
+              <div class="post-tags">
+                  <i class="fa fa-tags" aria-hidden="true"></i>
+                  {{#get "tags" limit="all"}}
+                      {{#foreach tags}}
+                          <a href="{{url}}">{{name}}</a>
+                      {{/foreach}}
+                  {{/get}}    
+              </div>
+              
+          {{/if}}
+      </div>
+
+      {{#author}}
+          {{#if profile_image}}
+              <div class="post-author">
+                  <div class="left">
+
+                          <div class="avatar">
+                              <img src="{{img_url profile_image}}" alt="" class="avatar-image avatar-image-small">
+                          </div>
+
+
+                  </div>
+                  <div class="right">
+                      <div class="author-details">
+                          <div class="author-name">
+                              <h3>{{name}}</h3>
+                          </div>
+                          <div class="author-bio">
+                              <p>{{bio}}</p>
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
+          {{/if}}
+      {{/author}}
+
+      <div class="fb-comments" data-href="{{@blog.url}}{{url}}" data-width="100%" data-numposts="4"></div>      
+    </article>
+    
+  {{/post}}
+
+{{> "footer"}}
