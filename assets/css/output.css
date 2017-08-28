@@ -135,6 +135,9 @@ a {
   .post-card .post-tags, .post-page .post-tags, .post-author .post-tags {
     text-align: left;
     margin-bottom: 12px; }
+    @media only screen and (max-width: 480px) {
+      .post-card .post-tags, .post-page .post-tags, .post-author .post-tags {
+        padding: 0px 18px; } }
     .post-card .post-tags i, .post-page .post-tags i, .post-author .post-tags i {
       color: #b9b9b9; }
     .post-card .post-tags a, .post-page .post-tags a, .post-author .post-tags a {
@@ -179,10 +182,6 @@ a {
   grid-gap: 10px;
   grid-template-columns: 1fr 3fr;
   padding: 8px 0px; }
-  .post-author .post-tags {
-    text-align: left;
-    margin-bottom: 12px;
-    padding: 0px 18px; }
   .post-author .left {
     grid-column: 1 / 2; }
     .post-author .left .avatar {
